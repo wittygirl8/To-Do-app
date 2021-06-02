@@ -2,22 +2,21 @@
 <div class="box1" id="heading">
        
     <h1>Today</h1>
-    </div>
-    
+    </div>  
     <div class="box">
- 
-  
-     <form >
+  <% newListItems.forEach(function(item){ %>
+app.post("/delete", function(req,res){
+     <form action="\delete" method="post">
      <div class="item">
          <div class="round">
-         <input type="checkbox"id="checkbox">
-        
+         <input type="checkbox" name= "checkbox" value = "<%=item._id %>" onChange="this.form.submit()" id="checkbox">
          <label for="checkbox"></label>
          </div>
-         <p>Welcome here</p>
+         <p><%= item.name %></p>
         <br>
      </div>
-     
+    <% }); %>
+<!---
      </form>
   
      <form >
@@ -71,7 +70,7 @@
      </div>
      
      </form>
-  
+  -->
  
     <form class="item" action="/" method="post">
      <input type="text" name = "n" placeholder="new"><hr>
